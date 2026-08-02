@@ -417,6 +417,23 @@
       setInterval(fixZIndex, 5000);
     }
 
+    startZIndexMonitor() {
+      const fixZIndex = () => {
+        let currentZIndex = 2040; // Bazowa wartość z-index
+        Object.values(this.layers).forEach(lData => {
+          if (lData.instance && lData.isEnabled) {
+            // Każda kolejna warstwa zyskuje wyższy z-index
+            lData.instance.setZIndex(currentZIndex++);
+          }
+        });
+      };
+      const throttled = window._ ? window._.throttle(fixZIndex, 1000) : fixZIndex;
+      window.W.map.events.register("moveend", window.W.map, throttled);
+      window.W.map.events.register("changelayer", window.W.map, throttled);
+      setInterval(fixZIndex, 5000);
+    }
+
+
     startMutationObserver() {
       const observer = new MutationObserver((mutations) => {
         for (const mutation of mutations) {
