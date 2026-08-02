@@ -281,6 +281,7 @@
                 singleTile: options.singleTile ?? true,
                 transitionEffect: "resize",
                 getURL: getUrlAsEpsg4326,
+		maxGetUrlRetries: 5,
                 getFullRequestString: setEpsg4326
               }
             );
