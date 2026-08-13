@@ -1,16 +1,16 @@
 // ==UserScript==
 // @name            Geoportal Waze integration (fork by snPL)
-// @version         1.5.1
+// @version         1.5.2
 // @description     Adds geoportal.gov.pl overlays ("satellite view", house numbers, cities names) to WME (API March 2026)
 // @include         https://*.waze.com/*/editor*
 // @include         https://*.waze.com/editor*
 // @include         https://*.waze.com/map-editor*
 // @include         https://*.waze.com/beta_editor*
-// @copyright       2013-2026+, Patryk Ściborek, Paweł Pyrczak, Kamil Marud, snPL (med-zz-eis)
+// @copyright       2013-2026+, Patryk Ściborek, Paweł Pyrczak, Kamil Marud, snPL, sledzik1984
 // @run-at          document-end
 // @grant           none
 // @license         MIT
-// @icon            https://www.google.com/s2/favicons?sz=64&domain=waze.com
+// @icon            https://www.google.com/s2/favicons?sz=64&domain=geoportal.gov.pl
 // @namespace       https://github.com/med-zz-eis/WME-geoportal.pl
 // @downloadURL     https://update.greasyfork.org/scripts/572377/Geoportal%20Waze%20integration%20%28fork%20by%20snPL%29.user.js
 // @updateURL       https://update.greasyfork.org/scripts/572377/Geoportal%20Waze%20integration%20%28fork%20by%20snPL%29.meta.js
