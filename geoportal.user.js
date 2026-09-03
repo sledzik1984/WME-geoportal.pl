@@ -424,18 +424,6 @@
 
     startZIndexMonitor() {
       const fixZIndex = () => {
-        Object.values(this.layers).forEach(lData => {
-          if (lData.instance && lData.isEnabled) lData.instance.setZIndex(2050);
-        });
-      };
-      const throttled = window._ ? window._.throttle(fixZIndex, 1000) : fixZIndex;
-      window.W.map.events.register("moveend", window.W.map, throttled);
-      window.W.map.events.register("changelayer", window.W.map, throttled);
-      setInterval(fixZIndex, 5000);
-    }
-
-    startZIndexMonitor() {
-      const fixZIndex = () => {
         let currentZIndex = 2040; // Bazowa wartość z-index
         Object.values(this.layers).forEach(lData => {
           if (lData.instance && lData.isEnabled) {
