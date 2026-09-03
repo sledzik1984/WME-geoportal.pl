@@ -295,6 +295,7 @@
               { layers, transparent: "true", format, version: "1.3.0" },
               {
                 isBaseLayer: false, visibility: false,
+                noMagic: true,
                 singleTile: options.singleTile ?? true,
                 transitionEffect: "resize",
                 getURL: getUrlAsEpsg4326,
