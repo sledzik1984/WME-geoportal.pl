@@ -53,12 +53,12 @@
 
       this.WMS_SERVICES = {
         orto: "https://mapy.geoportal.gov.pl/wss/service/PZGIK/ORTO/WMS/StandardResolution?",
-	orto_proxied: "http://192.168.15.130:3071/service?", //This needs to be changed to your own Mapproxy instance. Without it - this layer will not work!
+        orto_proxied: "http://192.168.15.130:3071/service?", //This needs to be changed to your own Mapproxy instance. Without it - this layer will not work!
         orto_high: "https://mapy.geoportal.gov.pl/wss/service/PZGIK/ORTO/WMS/HighResolution?",
-	orto_high_proxied: "http://192.168.15.130:3071/service?", //This needs to be changed to your own Mapproxy instance. Without it - this layer will not work!
+        orto_high_proxied: "http://192.168.15.130:3071/service?", //This needs to be changed to your own Mapproxy instance. Without it - this layer will not work!
         osm: "https://mapy.geoportal.gov.pl/wss/ext/OSM/BaseMap/service?",
         adresy: "https://mapy.geoportal.gov.pl/wss/ext/KrajowaIntegracjaNumeracjiAdresowej?request=GetMap&",
-	adresy_proxied: "http://192.168.15.130:3071/service?", //This needs to be changed to your own Mapproxy instance. Without it - this layer will not work!
+        adresy_proxied: "http://192.168.15.130:3071/service?", //This needs to be changed to your own Mapproxy instance. Without it - this layer will not work!
         rail: "https://mapy.geoportal.gov.pl/wss/service/sdi/Przejazdy/get?REQUEST=GetMap&",
         mileage: "https://mapy.geoportal.gov.pl/wss/ext/OSM/SiecDrogowaOSM?",
         topo: "https://integracja.gugik.gov.pl/cgi-bin/KrajowaIntegracjaBazDanychObiektowTopograficznych?",
@@ -77,13 +77,13 @@
           "BDOT - W budowie (Ekspr./Główna)", "BDOT - Jezdnia (Ekspr./Główna)",
           "BDOT - Autostrada", "BDOT - Numer drogi"
         ],
-	"Prywatne": [
-	  "Geoportal Orto - PROXY",
-	  "Geoportal Orto High Res - PROXY",
-	  "Geoportal Adresy - PROXY", 
-	  "Geoportal Ulice - PROXY", 
-	  "Geoportal Place - PROXY"
-	]
+        "Prywatne": [
+          "Geoportal Orto - PROXY",
+          "Geoportal Orto High Res - PROXY",
+          "Geoportal Adresy - PROXY", 
+          "Geoportal Ulice - PROXY", 
+          "Geoportal Place - PROXY"
+        ]
       };
 
       this.epsg900913 = new window.OpenLayers.Projection("EPSG:900913");
@@ -291,7 +291,7 @@
                 singleTile: options.singleTile ?? true,
                 transitionEffect: "resize",
                 getURL: getUrlAsEpsg4326,
-		maxGetUrlRetries: 5,
+    maxGetUrlRetries: 5,
                 getFullRequestString: setEpsg4326
               }
             );
