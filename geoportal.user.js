@@ -220,15 +220,22 @@
       const usrRank = window.W.loginManager.user.getRank();
 
       this.createWMSLayer("Geoportal - ortofoto", this.WMS_SERVICES.orto, "Raster", "image/jpeg", { singleTile: false, minZ: 0 });
+      this.createWMSLayer("Geoportal Orto - PROXY", this.WMS_SERVICES.orto_proxied, "Raster-Std", "image/jpeg", { singleTile: false, minZ: 0 });
       this.createWMSLayer("Geoportal - ortofoto high res", this.WMS_SERVICES.orto_high, "Raster", "image/jpeg", { singleTile: false, minZ: 14 });
+      this.createWMSLayer("Geoportal Orto High Res - PROXY", this.WMS_SERVICES.orto_high_proxied, "Raster", "image/jpeg", { singleTile: false, minZ: 14 });
+
 
       if (usrRank >= 1) {
         this.createWMSLayer("Geoportal - OSM", this.WMS_SERVICES.osm, "osm", "image/png");
       }
 
       this.createWMSLayer("Geoportal - adresy", this.WMS_SERVICES.adresy, "prg-adresy", "image/png", { singleTile: false, minZ: 14, hasOpacity: false });
+      this.createWMSLayer("Geoportal Adresy - PROXY", this.WMS_SERVICES.adresy_proxied, "prg-adresy", "image/png", { singleTile: false, minZ: 14, hasOpacity: false });
       this.createWMSLayer("Geoportal - ulice", this.WMS_SERVICES.adresy, "prg-ulice", "image/png", { singleTile: false, minZ: 14, hasOpacity: false });
+      this.createWMSLayer("Geoportal Ulice - PROXY", this.WMS_SERVICES.adresy_proxied, "prg-ulice", "image/png", { singleTile: false, minZ: 14, hasOpacity: false });
       this.createWMSLayer("Geoportal - place", this.WMS_SERVICES.adresy, "prg-place", "image/png", { singleTile: false, minZ: 14, hasOpacity: false });
+      this.createWMSLayer("Geoportal Place - PROXY", this.WMS_SERVICES.adresy_proxied, "prg-place", "image/png", { singleTile: false, minZ: 14, hasOpacity: false });
+
       this.createWMSLayer("Geoportal - adresy, place i ulice w jednym", this.WMS_SERVICES.adresy, "prg-adresy,prg-place,prg-ulice", "image/png", { signleTile: false, minZ: 14, hasOpacity: false });
 
       this.createWMSLayer("Geoportal - przejazdy kolejowe (wymagany duży zoom)", this.WMS_SERVICES.rail, "PMT_Linie_Kolejowe_Sp__z_o_o_,Kopalnia_Piasku_KOTLARNIA_-_Linie_Kolejowe_Sp__z__o_o_,Jastrzębska_Spółka_Kolejowa_Sp__z_o_o_,Infra_SILESIA_S_A_,EUROTERMINAL_Sławków_Sp__z_o_o_,Dolnośląska_Służba_Dróg_i_Kolei_we_Wrocławiu,CARGOTOR_Sp__z_o_o_,PKP_SKM_w_Trójmieście_Sp__z_o_o_,PKP_Linia_Hutnicza_Szerokotorowa_Sp__z_o__o_,PKP_Polskie_Linie_Kolejowe", "image/png", { minZ: 15 });
