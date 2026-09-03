@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name            Geoportal Waze integration (fork by snPL)
-// @version         1.5.2
-// @description     Adds geoportal.gov.pl overlays ("satellite view", house numbers, cities names) to WME (API March 2026)
+// @name            Geoportal Waze integration (fork by sledzik1984)
+// @version         1.5.3
+// @description     Adds geoportal.gov.pl overlays ("satellite view", house numbers, cities names) to WME (API March 2026). Forked from snPL - added ability to use own Mapproxy instance that caches / proxies Geoportal tiles - it's faster.
 // @include         https://*.waze.com/*/editor*
 // @include         https://*.waze.com/editor*
 // @include         https://*.waze.com/map-editor*
@@ -12,8 +12,8 @@
 // @license         MIT
 // @icon            https://www.google.com/s2/favicons?sz=64&domain=geoportal.gov.pl
 // @namespace       https://github.com/med-zz-eis/WME-geoportal.pl
-// @downloadURL     https://update.greasyfork.org/scripts/572377/Geoportal%20Waze%20integration%20%28fork%20by%20snPL%29.user.js
-// @updateURL       https://update.greasyfork.org/scripts/572377/Geoportal%20Waze%20integration%20%28fork%20by%20snPL%29.meta.js
+// @downloadURL     https://github.com/sledzik1984/WME-geoportal.pl/raw/refs/heads/master/geoportal.user.js
+// @updateURL       https://github.com/sledzik1984/WME-geoportal.pl/raw/refs/heads/master/geoportal.meta.js
 // ==/UserScript==
 
 /**
@@ -23,6 +23,7 @@
  */
 
 /* Changelog:
+ *  1.5.3 - Custom Layers for local Mapproxy instance
  *  1.5.1 - Allow selective opacity sliders (checkbox-only for boundaries/addresses).
  *  1.5.0 - Release (WME March 2026 API Update):
  *          - Complete refactor into ES6 Classes.
@@ -45,7 +46,7 @@
 
   class GeoportalIntegration {
     constructor() {
-      this.ver = "1.5.1";
+      this.ver = "1.5.3";
       this.layers = {};
       this.settingsKey = 'wme_geoportal_settings';
       this.settings = this.loadSettings();
